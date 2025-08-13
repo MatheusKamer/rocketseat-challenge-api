@@ -1,0 +1,18 @@
+POST http://localhost:3000/courses
+Content-Type: application/json
+
+{
+  "title": "Curso de PostgreSQL"
+}
+
+###
+
+GET http://localhost:3000/courses
+
+###
+
+GET http://localhost:3000/courses/4
+
+###
+
+DELETE http://localhost:3000/courses/2
