@@ -2,7 +2,8 @@ POST http://localhost:3000/courses
 Content-Type: application/json
 
 {
-  "title": "Curso de PostgreSQL"
+  "title": "Curso de PostgreSQL2",
+  "description": "baita curso"
 }
 
 ###
@@ -11,7 +12,7 @@ GET http://localhost:3000/courses
 
 ###
 
-GET http://localhost:3000/courses/4
+GET http://localhost:3000/courses/c21b3ec3-3e97-40b1-a5de-d9e017d694ae
 
 ###
 
