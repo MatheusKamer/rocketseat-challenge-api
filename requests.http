@@ -8,6 +8,14 @@ Content-Type: application/json
 
 ###
 
+GET http://localhost:3000/courses?orderBy=title
+
+###
+
+GET http://localhost:3000/courses?search=react
+
+###
+
 GET http://localhost:3000/courses
 
 ###

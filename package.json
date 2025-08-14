@@ -4,10 +4,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --ext ts,js --watch . --exec \"node --loader ts-node/esm -r dotenv/config server.ts\"",
+    "dev": "nodemon --ext ts,js --watch . --exec \"node --loader ts-node/esm -r dotenv/config src/server.ts\"",
+    "db:seed": "node --loader ts-node/esm -r dotenv/config src/database/seed.ts",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
-    "db:studio": "drizzle-kit studio"
+    "db:studio": "drizzle-kit studio",
+    "pretest": "dotenv -e .env.test drizzle-kit migrate",
+    "test": "dotenv -e .env.test vitest run --coverage"
   },
   "keywords": [],
   "author": "",
@@ -26,10 +29,16 @@
     "zod": "^4.0.17"
   },
   "devDependencies": {
+    "@faker-js/faker": "^9.9.0",
     "@types/node": "^24.2.1",
+    "@types/supertest": "^6.0.3",
+    "@vitest/coverage-v8": "^3.2.4",
+    "dotenv-cli": "^10.0.0",
     "drizzle-kit": "^0.31.4",
     "nodemon": "^3.1.10",
+    "supertest": "^7.1.4",
     "ts-node": "^10.9.2",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
   }
 }
