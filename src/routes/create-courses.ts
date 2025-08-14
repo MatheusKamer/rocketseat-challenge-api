@@ -25,10 +25,6 @@ export const createCoursesRoute: FastifyPluginAsyncZod = async (server) => {
     async (request, response) => {
       const { title, description } = request.body;
 
-      if (!title) {
-        return response.status(400).send({ message: 'Title is required' });
-      }
-
       const result = await db
         .insert(courses)
         .values({
