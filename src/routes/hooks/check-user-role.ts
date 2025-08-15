@@ -1,4 +1,4 @@
-import { FastifyReply, FastifyRequest } from 'fastify';
+import type { FastifyReply, FastifyRequest } from 'fastify';
 import { getAuthenticatedUserFromRequest } from '../../utils/get-authenticated-user-from-request.ts';
 
 export function checkUserRoleJWT(role: 'student' | 'manager') {

@@ -8,4 +8,4 @@ RUN npm ci
 
 EXPOSE 3000
 
-CMD ["node", "src/server.ts"]
+CMD ["sh", "-c", "npm run db:migrate && node src/server.ts"]
