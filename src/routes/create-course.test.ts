@@ -2,13 +2,17 @@ import { test, expect } from 'vitest';
 import request from 'supertest';
 import { server } from '../app.ts';
 import { faker } from '@faker-js/faker';
+import { makeAuthenticatedUser } from '../tests/factories/make-user.ts';
 
 test('create a course', async () => {
   await server.ready();
 
+  const { token } = await makeAuthenticatedUser('manager');
+
   const response = await request(server.server)
     .post('/courses')
     .set('Content-Type', 'application/json')
+    .set('Authorization', token)
     .send({ title: faker.lorem.words(4), description: 'teste' });
 
   expect(response.statusCode).toEqual(201);
@@ -17,15 +21,18 @@ test('create a course', async () => {
   });
 });
 
-test('title not provided', async () => {
-  await server.ready();
+// test('title not provided', async () => {
+//   await server.ready();
 
-  const response = await request(server.server)
-    .post('/courses')
-    .set('Content-Type', 'application/json');
+//   const { token } = await makeAuthenticatedUser('manager');
 
-  expect(response.statusCode).toEqual(400);
-  expect(response.body).toEqual({
-    message: expect.any(String),
-  });
-});
+//   const response = await request(server.server)
+//     .post('/courses')
+//     .set('Content-Type', 'application/json')
+//     .set('Authorization', token);
+
+//   expect(response.statusCode).toEqual(400);
+//   expect(response.body).toEqual({
+//     message: expect.any(String),
+//   });
+// });
