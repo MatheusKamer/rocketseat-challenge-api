@@ -1,9 +1,21 @@
 POST http://localhost:3000/courses
 Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0OGVkM2Y1Mi0zMzA5LTRjMTEtYTU0ZC1kNDQ1YWUzMjM0YTMiLCJyb2xlIjoibWFuYWdlciIsImlhdCI6MTc1NTI3OTEwNn0.LCifBmD_LBGXWoMPXPBiSSn1ZmlXVTB1Lnzxy4dz42o
+
 
 {
   "title": "Curso de PostgreSQL2",
   "description": "baita curso"
+}
+
+###
+
+POST http://localhost:3000/sessions
+Content-Type: application/json
+
+{
+  "email": "Joao.Costa@yahoo.com",
+  "password": "123456"
 }
 
 ###
@@ -20,7 +32,8 @@ GET http://localhost:3000/courses
 
 ###
 
-GET http://localhost:3000/courses/c21b3ec3-3e97-40b1-a5de-d9e017d694ae
+GET http://localhost:3000/courses/0f2c6489-d65f-4988-9812-7832c0827433
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0OGVkM2Y1Mi0zMzA5LTRjMTEtYTU0ZC1kNDQ1YWUzMjM0YTMiLCJyb2xlIjoibWFuYWdlciIsImlhdCI6MTc1NTI3OTEwNn0.LCifBmD_LBGXWoMPXPBiSSn1ZmlXVTB1Lnzxy4dz42o
 
 ###
 

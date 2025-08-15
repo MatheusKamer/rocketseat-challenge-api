@@ -36,6 +36,13 @@
       "when": 1755196325833,
       "tag": "0004_panoramic_odin",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1755266686912,
+      "tag": "0005_futuristic_synch",
+      "breakpoints": true
     }
   ]
 }
